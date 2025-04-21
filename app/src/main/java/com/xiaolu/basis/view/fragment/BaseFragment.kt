@@ -1,4 +1,4 @@
-package com.xiaolu.basis.view.adapter
+package com.xiaolu.basis.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,7 @@ import com.dylanc.viewbinding.base.FragmentBindingDelegate
  * 基类Fragment
  * </p>
  *
- * @author luyu
+ * @author xiaolu
  * @date Created in 2025/4/18 17:14:36
  */
 abstract class BaseFragment<VB : ViewBinding> : Fragment(),
@@ -67,4 +67,11 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment(),
      *
      */
     abstract fun loadData()
+
+    /**
+     * 这个Fragment是否已经加载过
+     */
+    open fun isLoading(): Boolean {
+        return loading
+    }
 }

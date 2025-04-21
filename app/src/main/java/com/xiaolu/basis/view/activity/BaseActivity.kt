@@ -15,6 +15,7 @@ import android.widget.EditText
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.blankj.utilcode.util.KeyboardUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.dylanc.viewbinding.base.ActivityBinding
 import com.dylanc.viewbinding.base.ActivityBindingDelegate
@@ -137,6 +138,19 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(),
                 //下线弹窗
             }
         }
+    }
+
+
+    override fun finish() {
+        super.finish()
+        //隐藏软键盘，避免内存泄露
+        KeyboardUtils.hideSoftInput(this)
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        //设置为当前的intent,避免Activity被杀死后重启Intent 还是原先的那个。
+        setIntent(intent)
     }
 
     override fun attachBaseContext(newBase: Context?) {

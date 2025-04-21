@@ -7,14 +7,62 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="test"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/rgTab"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <RadioGroup
+        android:id="@+id/rgTab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewPager2">
+
+        <RadioButton
+            android:id="@+id/rb_tab_mine_one"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_mine_pic"
+            android:gravity="center_horizontal"
+            android:text="@string/mine"
+            android:textColor="@drawable/tab_txt_color"
+            android:textSize="@dimen/sp_10" />
+
+        <RadioButton
+            android:id="@+id/rb_tab_mine_two"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_mine_pic"
+            android:gravity="center_horizontal"
+            android:text="@string/mine"
+            android:textColor="@drawable/tab_txt_color"
+            android:textSize="@dimen/sp_10" />
+
+        <RadioButton
+            android:id="@+id/rb_tab_mine_three"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_mine_pic"
+            android:gravity="center_horizontal"
+            android:text="@string/mine"
+            android:textColor="@drawable/tab_txt_color"
+            android:textSize="@dimen/sp_10" />
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
