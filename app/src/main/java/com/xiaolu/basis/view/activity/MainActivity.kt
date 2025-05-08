@@ -10,6 +10,7 @@ import com.xiaolu.basis.view.adapter.HomeFragmentAdapter
  */
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     private lateinit var pagerAdapter: HomeFragmentAdapter
+
     override fun initComponent() {
         pagerAdapter = HomeFragmentAdapter(this)
         binding.viewPager2.offscreenPageLimit = 1
